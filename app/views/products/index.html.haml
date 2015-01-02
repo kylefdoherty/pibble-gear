@@ -1,1 +1,11 @@
 %h1 Pibble Gear
+
+- @products.each do |p|
+  .product
+    %h2
+      = p.name
+    %p
+      %a{ href: product_path(p) }
+        %img{:border => "0", :src => p.small_image_link }/
+    %p
+      = p.description

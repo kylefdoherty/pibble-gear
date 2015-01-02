@@ -8,8 +8,17 @@
     = f.text_area :description
 
   %p
-    = f.label :amazon_link
-    = f.text_field :amazon_link
+    = f.label :affiliate_link
+    = f.text_field :affiliate_link
+
+  %p
+    = f.label :large_image_link
+    = f.text_field :large_image_link
+
+  %p
+    = f.label :small_image_link
+    = f.text_field :small_image_link
+
 
   %p
     = f.submit "Create Product"

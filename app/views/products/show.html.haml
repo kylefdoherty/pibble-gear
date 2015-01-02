@@ -2,5 +2,9 @@
   = @product.name
 %p
   = @product.description
+
 %p
-  = @product.amazon_link
+  %img{:border => "0", :src => @product.large_image_link }/
+
+%p
+  = link_to "Purchase on Amazon", @product.affiliate_link,  target: "_blank"

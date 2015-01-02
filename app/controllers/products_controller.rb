@@ -19,11 +19,15 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def index
+    @products = Product.all
+  end
+
 
   private
 
     def product_params
-      params.require(:product).permit(:name, :description, :amazon_link)
+      params.require(:product).permit(:name, :description, :affiliate_link, :large_image_link, :small_image_link)
     end
 end
 

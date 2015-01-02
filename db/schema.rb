@@ -16,7 +16,9 @@ ActiveRecord::Schema.define(version: 20141231222002) do
   create_table "products", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "amazon_link"
+    t.string   "affiliate_link"
+    t.string   "large_image_link"
+    t.string   "small_image_link"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

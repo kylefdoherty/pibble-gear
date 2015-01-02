@@ -3,7 +3,10 @@ class CreateProducts < ActiveRecord::Migration
     create_table :products do |t|
       t.string :name
       t.text :description
-      t.string :amazon_link
+      t.string :affiliate_link
+      t.string :large_image_link
+      t.string :small_image_link
+
 
       t.timestamps
     end
