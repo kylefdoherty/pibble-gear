@@ -15,4 +15,6 @@
 /log/*.log
 /tmp
 
+todo.md
+
 .env
