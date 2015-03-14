@@ -40,6 +40,7 @@ group :development, :test do
   gem "factory_girl_rails"
   gem 'pry'
   gem 'dotenv-rails'
+  gem 'guard'
 end
 
 group :test do
