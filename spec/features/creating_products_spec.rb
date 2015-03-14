@@ -1,7 +1,11 @@
 require 'rails_helper'
 
 feature "Creating Products" do
+
   scenario "can create a product" do
+    user = create(:user)
+    login_as(user, :scope => :user)
+
     visit "/products/new"
 
     fill_in "Name", with: "Black Kong"
