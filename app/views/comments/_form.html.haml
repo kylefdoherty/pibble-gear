@@ -1,0 +1,6 @@
+= form_for [@product, @comment] do |f|
+  %p
+    = f.label :content, "Your Thoughts:"
+    = f.text_field :content
+  %p
+    = f.submit "Comment"

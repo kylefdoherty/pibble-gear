@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+
   def new
     @product = Product.new
   end
@@ -48,8 +50,3 @@ class ProductsController < ApplicationController
       params.require(:product).permit(:name, :description, :affiliate_link, :large_image_link, :small_image_link, :price, :product_image)
     end
 end
-
-
-
-
-
