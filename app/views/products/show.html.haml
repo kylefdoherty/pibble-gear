@@ -14,15 +14,17 @@
         Buy on Amazon for
         %span.badge $#{@product.price}
 
-  %p
-    = link_to "Add Comment", new_product_comment_path(@product)
-
-  .comments
+  .div.comments
     %h2 Comments
     - @product.comments.each do |c|
       .comment
+        %p.comment-date
+          Posted on:
+          = c.created_at.strftime("%b %d, %Y")
         %p
           = c.content
+  .div.content
+    = render "/comments/form"
 
   - if user_signed_in?
     %p

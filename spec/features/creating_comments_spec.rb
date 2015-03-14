@@ -7,8 +7,7 @@ feature "Creating Comments" do
 
     visit "/products/1"
 
-    click_link "Add Comment"
-    fill_in "Your Thoughts:", with: "Amazing product"
+    fill_in "Leave Comment:", with: "Amazing product"
     click_button "Comment"
 
     expect(page).to have_content("Amazing product")

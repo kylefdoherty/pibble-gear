@@ -1,6 +1,7 @@
-= form_for [@product, @comment] do |f|
+= form_for [@product, @comment], class: "form-group" do |f|
   %p
-    = f.label :content, "Your Thoughts:"
-    = f.text_field :content
-  %p
-    = f.submit "Comment"
+    %label
+      = f.label :content, "Leave Comment:"
+      = f.text_field :content, class: "form-control"
+    %p
+      = f.submit "Comment", class: "btn btn-default"
