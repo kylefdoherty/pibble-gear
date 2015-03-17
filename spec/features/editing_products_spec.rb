@@ -1,8 +1,12 @@
 require "rails_helper"
 
 feature "Editing Products" do
+
   scenario "updating a product" do
-    create(:product)
+    product = create(:product, id: 1)
+
+    user = create(:user)
+    login_as(user, :scope => :user)
 
     visit "/products/1"
 

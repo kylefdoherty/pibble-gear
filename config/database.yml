@@ -13,10 +13,10 @@ development:
   timeout: 5000
 
 
-development:
+production:
   adapter: postgresql
   encoding: unicode
-  database: pibble_gear_development
+  database: pibble_gear_production
   pool: 5
   timeout: 5000
 
