@@ -7,7 +7,9 @@ feature "Liking Products" do
     visit "/products/1"
 
     click_link("like-heart")
-
     expect(page).to have_content("1 like")
+
+    click_link("like-heart")
+    expect(page).to have_content("2 likes")
   end
 end
