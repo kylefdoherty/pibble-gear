@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root "products#index"
 
   resources :products do
-    resources :comments
+    resources :comments, only: [:new, :create]
+    resources :likes, only: [:create]
   end
 end
