@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_admin!, except: [:index, :show]
 
   def new
     @product = Product.new
@@ -46,6 +46,11 @@ class ProductsController < ApplicationController
 
 
   private
+
+    def authenticate_admin!
+      redirect_to root_path unless authenticate_user! && current_user.admin
+      flash[:notice] = "You must be an admin to access this page"
+    end
 
     def product_params
       params.require(:product).permit(:name, :description, :affiliate_link, :large_image_link, :small_image_link, :price, :product_image)
