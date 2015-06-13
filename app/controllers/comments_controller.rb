@@ -6,7 +6,9 @@ class CommentsController < ApplicationController
   end
 
   def create
+
     @comment = @product.comments.build(comment_params)
+    @comment.update(user: current_user)
 
     if @comment.save
       redirect_to @product
