@@ -25,6 +25,9 @@
         %p.comment-date
           Posted on:
           = c.created_at.strftime("%b %d, %Y")
+        %p.commenter
+          Commenter:
+          = c.user.email
         %p
           = c.content
   .div.content
