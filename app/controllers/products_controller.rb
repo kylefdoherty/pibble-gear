@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :authenticate_admin!, except: [:index, :show]
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def new
     @product = Product.new
@@ -18,7 +19,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
     @comment = Comment.new
   end
 
@@ -27,18 +27,15 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
   end
 
   def update
-    @product = Product.find(params[:id])
     @product.update(product_params)
 
     redirect_to @product
   end
 
   def destroy
-    @product = Product.find(params[:id])
     @product.delete
 
     redirect_to root_path
@@ -50,6 +47,10 @@ class ProductsController < ApplicationController
     def authenticate_admin!
       redirect_to root_path unless authenticate_user! && current_user.admin
       flash[:notice] = "You must be an admin to access this page"
+    end
+
+    def set_product
+      @product = Product.find(params[:id])
     end
 
     def product_params
