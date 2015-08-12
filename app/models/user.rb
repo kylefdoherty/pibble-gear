@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
           :rememberable, :trackable, :validatable
 
   has_many :comments
+  has_many :likes
   has_one :profile, dependent: :destroy
   accepts_nested_attributes_for :profile
 end

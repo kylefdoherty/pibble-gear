@@ -6,3 +6,12 @@
 
 %p
   = @user.profile.bio
+
+%h2 Products You Like
+%div.likes
+  %ul
+  - @user.likes.each do |like|
+    %li
+      %img{src: like.product.product_image_url(:thumb).to_s }
+      %h3
+      = like.product.name
