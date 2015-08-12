@@ -33,7 +33,11 @@ gem 'carrierwave'
 gem 'fog'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+
+group :development do
+  gem 'spring'
+  gem 'bullet'
+end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
