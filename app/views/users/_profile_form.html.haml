@@ -1,0 +1,13 @@
+= form_for @user do |f|
+
+  = f.fields_for :profile do |p|
+    %p
+      = p.label :name
+      = p.text_field :name
+
+    %p
+      = p.label :bio
+      = p.text_area :bio
+
+  %p
+    = f.submit "Save"
